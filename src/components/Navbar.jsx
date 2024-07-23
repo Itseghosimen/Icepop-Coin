@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import Logo from "./../assets/icons/logo.png";
 import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Logo_video from "./../assets/logo.mp4";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(true);
@@ -12,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="absolute top-0 pt-5 px-10 lg:px-16 inset-x-0 z-50">
+    <header className="absolute top-0 pt-5 px-10 lg:px-16 inset-x-0 z-40">
       <nav>
         <div
           className={`fixed h-screen ${
@@ -21,7 +22,17 @@ const Navbar = () => {
         />
         <div className="flex items-center justify-between ">
           <div className="shrink-0">
-            <img className="h-14 md:h-16 lg:h-20" src={Logo} alt="Logo" />
+            <div className="relative bg-[#9959BA] h-14 md:h-16 lg:h-20 w-14 md:w-16 lg:w-20 rounded-full overflow-hidden shrink-0">
+              <video
+                className="absolute"
+                autoPlay={"autoplay"}
+                playsInline
+                muted
+                loop
+              >
+                <source src={Logo_video} type="video/mp4" />
+              </video>
+            </div>
           </div>
           {clicked ? (
             <div
@@ -63,19 +74,19 @@ const Navbar = () => {
             </ul>
             <div className="flex items-center gap-5">
               <a
-                href="/"
+                href="https://t.co/yW4dBOeUpA?ssr=true"
                 className="text-2xl text-black hover:text-[#9959BA] transition-colors ease-in-out duration-300"
               >
                 <FaTelegramPlane />
               </a>
               <a
-                href="/"
+                href="https://discord.gg/luminaweb3"
                 className="text-2xl text-black hover:text-[#9959BA] transition-colors ease-in-out duration-300"
               >
                 <FaDiscord />
               </a>
               <a
-                href="/"
+                href="https://x.com/icepopcoin?s=11"
                 className="text-2xl text-black hover:text-[#9959BA] transition-colors ease-in-out duration-300"
               >
                 <FaXTwitter />
